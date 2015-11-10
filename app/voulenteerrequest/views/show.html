@@ -1,0 +1,40 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      Show
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      <h2 ng-bind="voulenteerrequest['Vol_Email']"></h2>
+      
+      
+      
+       <p>Vol_Name: <span ng-bind="voulenteerrequest['Vol_Name']"></span></p> 
+      
+       <p>createdAt: <span ng-bind="voulenteerrequest['createdAt']"></span></p> 
+      
+       <p>objectId: <span ng-bind="voulenteerrequest['objectId']"></span></p> 
+      
+       <p>updatedAt: <span ng-bind="voulenteerrequest['updatedAt']"></span></p> 
+      
+       <p>vol_phone: <span ng-bind="voulenteerrequest['vol_phone']"></span></p> 
+      
+       <p>vol_work: <span ng-bind="voulenteerrequest['vol_work']"></span></p> 
+      
+
+
+      <super-modal-show location="voulenteerrequest#edit?id={{ voulenteerrequest.id }}">
+        <button class="button button-block button-positive">
+          Edit
+        </button>
+      </super-modal-show>
+
+      <button ng-click="remove(voulenteerrequest.id)" class="button button-block button-negative">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>

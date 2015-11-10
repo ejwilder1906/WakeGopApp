@@ -1,0 +1,47 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      Event Details
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      
+     <h2><span ng-bind="countyevent['event_name']"></span></h2>
+	 
+      <div class="list card">
+
+  <div class="item item-avatar">
+	<p>Date: <span ng-bind="countyevent['event_date']"></span></p>
+    <p>Location: <span ng-bind="countyevent['event_location_name']"></span></p>
+	
+  </div>
+
+  <div class="item item-image">
+  <img ng-src ="{{ countyevent.event_flyer['url'] }} "></img>
+  </div>
+  <div class="item item-body">
+    
+    <p>
+	
+      Speaker: <span ng-bind="countyevent['event_speaker']"></span>
+    </p>
+	<p>
+	
+      Subject: <span ng-bind="countyevent['event_subject']"></span>
+    </p>
+	
+    <p>
+      <p>Contact: <span ng-bind="countyevent['event_host']"></span></p> 
+      <p> <span ng-bind= "countyevent['event_host_email']"></span></p>
+    </p>
+	<p>Price: <span ng-bind="countyevent['event_cost']"></span></p> 
+  </div>
+
+</div>
+
+    </div>
+  </div>
+</div>

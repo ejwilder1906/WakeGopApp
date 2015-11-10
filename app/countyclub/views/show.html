@@ -1,0 +1,34 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      About the Clubs
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      
+	  
+      
+    <div class="item item-thumbnail-left">
+		<img ng-src ="{{ countyclub.club_logo['url'] }} "></img>
+	  
+		
+		<h2><span ng-bind="countyclub['club_name']"></h2>
+		<p>Location:<span ng-bind="countyclub['club_location']"></p>
+		<p>Address:<span ng-bind="countyclub['club_meeting_address']"></p>
+		<p>Time: <span ng-bind="countyclub['club_time']"></span></p>
+		<p>President: <span ng-bind="countyclub['club_president']"></span></p>
+		<p>Email: <span ng-bind="countyclub['club_email']"></span></p>
+		
+	 </div>
+  <div>
+	<p> About Us: <span ng-bind="countyclub['club_bio']"></span></p>
+  </div>
+
+
+      
+    </div>
+  </div>
+</div>

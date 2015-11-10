@@ -1,0 +1,24 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      Cantidate Info
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      <h2 ng-bind="endorse['Position']"></h2>
+      
+       
+      
+       <h3><span ng-bind="endorse['name']"></span></h3> 
+      
+       <h5>Contact: <span ng-bind="endorse['website']"></span></h5> 
+      
+
+
+      
+    </div>
+  </div>
+</div>

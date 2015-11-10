@@ -1,0 +1,36 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      County Leaders
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+     
+	 
+	   
+	  
+	  <div class="list card">
+
+			  <div class="item item-avatar">
+				<img ng-src ="{{ countyleader.lead_photo['url'] }} "></img>
+				<h2><span ng-bind="countyleader['lead_name']"></span></h2>
+				<p><span ng-bind="countyleader['lead_role']"></span></p>
+				<p><span ng-bind="countyleader['lead_email']"></span></p>
+			  </div>
+
+			  <div class="item item-body">
+				<p>
+				  <span ng-bind="countyleader['lead_bio']"></span>
+				</p>
+				
+			  </div>
+
+			</div>
+      
+      
+       
+  </div>
+</div>

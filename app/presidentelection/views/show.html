@@ -1,0 +1,42 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      Show
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      <h2 ng-bind="presidentelection['Name']"></h2>
+      
+      
+      
+       <p>createdAt: <span ng-bind="presidentelection['createdAt']"></span></p> 
+      
+       <p>job: <span ng-bind="presidentelection['job']"></span></p> 
+      
+       <p>objectId: <span ng-bind="presidentelection['objectId']"></span></p> 
+      
+       <p>photo: <span ng-bind="presidentelection.photo['url']"></span></p> 
+      
+       <p>state: <span ng-bind="presidentelection['state']"></span></p> 
+      
+       <p>updatedAt: <span ng-bind="presidentelection['updatedAt']"></span></p> 
+      
+       <p>website: <span ng-bind="presidentelection['website']"></span></p> 
+      
+
+
+      <super-modal-show location="presidentelection#edit?id={{ presidentelection.id }}">
+        <button class="button button-block button-positive">
+          Edit
+        </button>
+      </super-modal-show>
+
+      <button ng-click="remove(presidentelection.id)" class="button button-block button-negative">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>

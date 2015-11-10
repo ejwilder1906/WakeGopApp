@@ -1,0 +1,44 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      Show
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      <h2 ng-bind="offical['Off_name']"></h2>
+      
+      
+      
+       <p>Off_role: <span ng-bind="offical['Off_role']"></span></p> 
+      
+       <p>comm_picture: <span ng-bind="offical['comm_picture']"></span></p> 
+      
+       <p>createdAt: <span ng-bind="offical['createdAt']"></span></p> 
+      
+       <p>objectId: <span ng-bind="offical['objectId']"></span></p> 
+      
+       <p>off_phone: <span ng-bind="offical['off_phone']"></span></p> 
+      
+       <p>off_website: <span ng-bind="offical['off_website']"></span></p> 
+      
+       <p>political_party: <span ng-bind="offical['political_party']"></span></p> 
+      
+       <p>updatedAt: <span ng-bind="offical['updatedAt']"></span></p> 
+      
+
+
+      <super-modal-show location="offical#edit?id={{ offical.id }}">
+        <button class="button button-block button-positive">
+          Edit
+        </button>
+      </super-modal-show>
+
+      <button ng-click="remove(offical.id)" class="button button-block button-negative">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>

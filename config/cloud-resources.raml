@@ -1,0 +1,286 @@
+#%RAML 0.8
+title: Steroids Data
+mediaType: application/json
+baseUri: https://rest-api.appgyver.com/v1/
+
+traits:
+    - securedBySteroidsApiKey:
+        headers:
+          steroidsApiKey:
+            type: string
+            example: exampleapikey
+            default: 479abcf11d12301df2eacc29144251f051ac4583bfcc3a84ad10dc6c66750c5a
+          steroidsAppId:
+            type: integer
+            example: 1234
+            default: 59688
+  
+schemas:
+  - announce_collection: '{"$schema":"http://json-schema.org/schema","title":"announce collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical announce representation","properties":{"ann_announcer":{"type":"string"},"ann_content":{"type":"string"},"ann_date":{"type":"object"},"ann_title":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}}}}'
+  - announce_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical announce representation","properties":{"ann_announcer":{"type":"string"},"ann_content":{"type":"string"},"ann_date":{"type":"object"},"ann_title":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}'
+  - countyClub_collection: '{"$schema":"http://json-schema.org/schema","title":"countyClub collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical countyClub representation","properties":{"club_bio":{"type":"string"},"club_email":{"type":"string"},"club_loc_address":{"type":"string"},"club_location":{"type":"string"},"club_logo":{"type":"object"},"club_meeting_address":{"type":"string"},"club_name":{"type":"string"},"club_president":{"type":"string"},"club_time":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}}}}'
+  - countyClub_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical countyClub representation","properties":{"club_bio":{"type":"string"},"club_email":{"type":"string"},"club_loc_address":{"type":"string"},"club_location":{"type":"string"},"club_logo":{"type":"object"},"club_meeting_address":{"type":"string"},"club_name":{"type":"string"},"club_president":{"type":"string"},"club_time":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}'
+  - countyCommittee_collection: '{"$schema":"http://json-schema.org/schema","title":"countyCommittee collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical countyCommittee representation","properties":{"committee_chair":{"type":"string"},"committee_name":{"type":"string"},"committee_subject":{"type":"string"},"committie_time":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}}}}'
+  - countyCommittee_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical countyCommittee representation","properties":{"committee_chair":{"type":"string"},"committee_name":{"type":"string"},"committee_subject":{"type":"string"},"committie_time":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}'
+  - offical_collection: '{"$schema":"http://json-schema.org/schema","title":"offical collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical offical representation","properties":{"Off_name":{"type":"string"},"Off_role":{"type":"string"},"comm_picture":{"type":"object"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"off_phone":{"type":"string"},"off_website":{"type":"string"},"political_party":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}}}}'
+  - offical_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical offical representation","properties":{"Off_name":{"type":"string"},"Off_role":{"type":"string"},"comm_picture":{"type":"object"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"off_phone":{"type":"string"},"off_website":{"type":"string"},"political_party":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}'
+  - countyEvent_collection: '{"$schema":"http://json-schema.org/schema","title":"countyEvent collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical countyEvent representation","properties":{"Event_host_contat_person":{"type":"string"},"createdAt":{"type":"string"},"event_cost":{"type":"string"},"event_date":{"type":"string"},"event_flyer":{"type":"object"},"event_host":{"type":"string"},"event_host_email":{"type":"string"},"event_location_name":{"type":"string"},"event_name":{"type":"string"},"event_speaker":{"type":"string"},"event_subject":{"type":"string"},"event_time":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}}}}'
+  - countyEvent_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical countyEvent representation","properties":{"Event_host_contat_person":{"type":"string"},"createdAt":{"type":"string"},"event_cost":{"type":"string"},"event_date":{"type":"string"},"event_flyer":{"type":"object"},"event_host":{"type":"string"},"event_host_email":{"type":"string"},"event_location_name":{"type":"string"},"event_name":{"type":"string"},"event_speaker":{"type":"string"},"event_subject":{"type":"string"},"event_time":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}'
+  - countyLeader_collection: '{"$schema":"http://json-schema.org/schema","title":"countyLeader collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical countyLeader representation","properties":{"createdAt":{"type":"string"},"lead_bio":{"type":"string"},"lead_email":{"type":"string"},"lead_name":{"type":"string"},"lead_photo":{"type":"object"},"lead_role":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}}}}'
+  - countyLeader_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical countyLeader representation","properties":{"createdAt":{"type":"string"},"lead_bio":{"type":"string"},"lead_email":{"type":"string"},"lead_name":{"type":"string"},"lead_photo":{"type":"object"},"lead_role":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}'
+  - voulenteerRequest_collection: '{"$schema":"http://json-schema.org/schema","title":"voulenteerRequest collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical voulenteerRequest representation","properties":{"Vol_Email":{"type":"string"},"Vol_Name":{"type":"string"},"Vol_name_lasr":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"},"vol_phone":{"type":"string"},"vol_work":{"type":"string"}},"required":[]}}}}'
+  - voulenteerRequest_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical voulenteerRequest representation","properties":{"Vol_Email":{"type":"string"},"Vol_Name":{"type":"string"},"Vol_name_lasr":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"},"vol_phone":{"type":"string"},"vol_work":{"type":"string"}},"required":[]}'
+  - delEvent_collection: '{"$schema":"http://json-schema.org/schema","title":"delEvent collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical delEvent representation","properties":{"createdAt":{"type":"string"},"event_cost":{"type":"string"},"event_date":{"type":"object"},"event_host":{"type":"string"},"event_host_email":{"type":"string"},"event_location_addr":{"type":"string"},"event_location_name":{"type":"string"},"event_name":{"type":"string"},"event_speaker":{"type":"string"},"event_subject":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}}}}'
+  - delEvent_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical delEvent representation","properties":{"createdAt":{"type":"string"},"event_cost":{"type":"string"},"event_date":{"type":"object"},"event_host":{"type":"string"},"event_host_email":{"type":"string"},"event_location_addr":{"type":"string"},"event_location_name":{"type":"string"},"event_name":{"type":"string"},"event_speaker":{"type":"string"},"event_subject":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}'
+  - Endorse_collection: '{"$schema":"http://json-schema.org/schema","title":"Endorse collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical Endorse representation","properties":{"Position":{"type":"string"},"createdAt":{"type":"string"},"name":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"},"website":{"type":"string"}},"required":[]}}}}'
+  - Endorse_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical Endorse representation","properties":{"Position":{"type":"string"},"createdAt":{"type":"string"},"name":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"},"website":{"type":"string"}},"required":[]}'
+  - presidentElection_collection: '{"$schema":"http://json-schema.org/schema","title":"presidentElection collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical presidentElection representation","properties":{"Name":{"type":"string"},"createdAt":{"type":"string"},"job":{"type":"string"},"objectId":{"type":"string"},"photo":{"type":"object"},"state":{"type":"string"},"updatedAt":{"type":"string"},"website":{"type":"string"}},"required":[]}}}}'
+  - presidentElection_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical presidentElection representation","properties":{"Name":{"type":"string"},"createdAt":{"type":"string"},"job":{"type":"string"},"objectId":{"type":"string"},"photo":{"type":"object"},"state":{"type":"string"},"updatedAt":{"type":"string"},"website":{"type":"string"}},"required":[]}'
+
+resourceTypes:
+  - dolan_db_collection:
+      usage: This resourceType should be used for any collection of items
+      is: [ securedBySteroidsApiKey ]
+      get:
+        description: |
+          {
+            "action": "collection"
+          }
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "objects"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_collection # e.g cars
+      post:
+        description: |
+          {
+            "action": "create",
+            "rootKey": "object"
+          }
+        body:
+          application/json:
+            schema: <<resourcePathName>>_member
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "object"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member # e.g. car
+
+  - dolan_db_member:
+      usage: This resourceType should be used for any built.io item
+      is: [ securedBySteroidsApiKey ]
+      get:
+        description: |
+          {
+            "action": "find"
+          }
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "object"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member # e.g. car
+      put:
+        description: |
+          {
+            "action": "update",
+            "rootKey": "object"
+          }
+        body:
+          application/json:
+            schema: <<resourcePathName>>_member
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "object"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member
+      delete:
+        description: |
+          {
+            "action": "destroy"
+          }
+        responses:
+          200:
+
+  - parse_collection:
+      usage: This resourceType should be used for any collection of items
+      is: [ securedBySteroidsApiKey ]
+      get:
+        description: |
+          {
+            "action": "collection"
+          }
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "results"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_collection # e.g cars
+      post:
+        description: |
+          {
+            "action": "create"
+          }
+        body:
+          application/json:
+            schema: <<resourcePathName>>_member
+        responses:
+          200:
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member # e.g. car
+
+  - parse_member:
+      usage: This resourceType should be used for any parse item
+      is: [ securedBySteroidsApiKey ]
+      get:
+        description: |
+          {
+            "action": "find"
+          }
+        responses:
+          200:
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member # e.g. car
+      put:
+        description: |
+          {
+            "action": "update"
+          }
+        body:
+          application/json:
+            schema: <<resourcePathName>>_member
+        responses:
+          200:
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member
+      delete:
+        description: |
+          {
+            "action": "destroy"
+          }
+        responses:
+          200:
+
+
+/announce:
+  description: |
+    {
+      "resourceName": "announce",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+/countyClub:
+  description: |
+    {
+      "resourceName": "countyClub",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+/countyCommittee:
+  description: |
+    {
+      "resourceName": "countyCommittee",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+/offical:
+  description: |
+    {
+      "resourceName": "offical",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+/countyEvent:
+  description: |
+    {
+      "resourceName": "countyEvent",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+/countyLeader:
+  description: |
+    {
+      "resourceName": "countyLeader",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+/voulenteerRequest:
+  description: |
+    {
+      "resourceName": "voulenteerRequest",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+/delEvent:
+  description: |
+    {
+      "resourceName": "delEvent",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+/Endorse:
+  description: |
+    {
+      "resourceName": "Endorse",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+/presidentElection:
+  description: |
+    {
+      "resourceName": "presidentElection",
+      "identifierKey": "objectId"
+    }
+  type: parse_collection
+  /{id}:
+    type: parse_member
+
+

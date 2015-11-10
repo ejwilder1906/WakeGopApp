@@ -1,0 +1,24 @@
+<div ng-controller="IndexController">
+  <super-navbar>
+    <super-navbar-title>
+      County Events
+    </super-navbar-title>
+  </super-navbar>
+
+  <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+  <div ng-hide="showSpinner">
+    <ul class="list" ng-hide="countyevents.length == 0">
+
+      <super-navigate location="countyevent#show" data-params-id="{{ countyevent.id }}" ng-repeat="countyevent in countyevents">
+        <li class="item item-icon-right">
+          <span ng-bind="countyevent['event_name']"> - </span>
+		  <span ng-bind="countyevent['event_date']"></span>
+          <i class="icon super-ios7-arrow-right"></i>
+        </li>
+      </super-navigate>
+
+    </ul>
+
+    
+  </div>
+</div>

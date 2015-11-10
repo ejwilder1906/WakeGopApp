@@ -1,0 +1,27 @@
+<div ng-controller="IndexController">
+  <super-navbar>
+    <super-navbar-title>
+      County Committees
+    </super-navbar-title>
+  </super-navbar>
+
+  <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+  <div ng-hide="showSpinner">
+    <ul class="list" ng-hide="countycommittees.length == 0">
+
+      <super-navigate location="countycommittee#show" data-params-id="{{ countycommittee.id }}" ng-repeat="countycommittee in countycommittees">
+        <li class="item item-icon-right">
+          <span ng-bind="countycommittee['committee_name']"></span>
+          <i class="icon super-ios7-arrow-right"></i>
+        </li>
+      </super-navigate>
+
+    </ul>
+
+    <h4 ng-show="countycommittees.length == 0" class="assertive padding">
+      No countycommittees found. Create one?
+    </h4>
+
+    
+  </div>
+</div>

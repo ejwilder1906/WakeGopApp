@@ -1,0 +1,56 @@
+<div ng-controller="IndexController">
+  <super-navbar>
+    <super-navbar-title>
+      Where To Start
+    </super-navbar-title>
+  </super-navbar>
+
+  <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+  <div ng-hide="showSpinner">
+    <ul class="list" ng-hide="voulenteerrequests.length == 0">
+
+       <p>Donating time and effort to the causes and candidates in your community does not have to be a huge commitment. The Wake Republican party can use the help from many individuals that are willing to donate a little time, talent and resources. There are so many ways to support your local GOP candidates that commit their time to stand by the issues that mean so much to North Carolina. </p>
+
+	   <div class="card">
+		  <div class="item item-divider">
+		   <b> Phone Bank...</b>
+		  </div>
+		  <div class="item item-text-wrap">
+		   <p></p>
+		  
+		  </div>  
+		</div>
+		
+		<div class="card">
+		  <div class="item item-divider">
+		   <b> In Our Office...</b>
+		  </div>
+		  <div class="item item-text-wrap">
+		   <p></p>
+		  
+		  </div>  
+		</div>
+		
+		<div class="card">
+		  <div class="item item-divider">
+		   <b> Walk You Neighborhood...</b>
+		  </div>
+		  <div class="item item-text-wrap">
+		   <p></p>
+		  
+		  </div>  
+		</div>
+		
+    </ul>
+
+    <h4 ng-show="voulenteerrequests.length == 0" class="assertive padding">
+      No voulenteerrequests found. Create one?
+    </h4>
+
+    <super-modal-show location="voulenteerrequest#new">
+      <button class="button button-full button-positive">
+        Voulenteer With Us
+      </button>
+    </super-modal-show>
+  </div>
+</div>

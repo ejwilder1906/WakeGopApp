@@ -1,0 +1,25 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      County Announcements
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      <div class="card">
+			<div class="item item-divider">
+				<span ng-bind="announce['ann_title']"></span>
+			</div>
+			<div class="item item-text-wrap">
+				<p><span ng-bind="announce['ann_content']"></span></p> 
+			</div>
+			<div class="item item-divider">
+				<p>From: <span ng-bind="announce['ann_announcer']"></span></p>
+				<p><span ng-bind="announce['updatedAt']"></span></p>
+			</div>
+		</div>
+    </div>
+  </div>
+</div>

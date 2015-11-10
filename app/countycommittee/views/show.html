@@ -1,0 +1,32 @@
+<div ng-controller="ShowController">
+  <super-navbar>
+    <super-navbar-title>
+      Committee Details
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+      <h2 ng-bind="countycommittee['committee_name']"></h2>
+      
+     
+	   <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="avatar.jpg">
+    <h2><span ng-bind="countycommittee['committee_name']"></span></h2>
+    <p>Chair: <span ng-bind="countycommittee['committee_chair']"></span></p>
+  </div>
+
+  <div class="item item-body">
+    <span ng-bind="countycommittee['committee_subject']"></span>
+  </div>
+
+  <a class="item item-icon-left assertive" href="www.google.com">
+    <p>Time: <span ng-bind="countycommittee['committie_time']"></span></p>
+  </a>
+  
+    </div>
+  </div>
+</div>
